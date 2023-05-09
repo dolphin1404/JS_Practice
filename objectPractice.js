@@ -101,6 +101,42 @@ const Mike3 = {
   age: 30,
 };
 
-for (x in Mike3) {
-  console.log(Mike[x]); // Mike['name'] -> Mike['age'] 로 가는 순서
+for (key in Mike3) {
+  //console.log(key); // Mike3가 가지고 있는 property
+  console.log(Mike[key]); // Mike['name'] -> Mike['age'] 로 가는 순서
 }
+console.log("------new--------");
+
+/* object - method, this
+method : 객체 프로퍼티로 할당 된 함수
+this : 실행하는 시점 즉 런타임때 결정
+그러나 화살표함수는 일반 함수와는 달리 자신만의 this를 가지지 않음, 화살표 함수 내부에서 this를 사용하면, 그 this는 외부에서 값을 가져옴
+만약 사용하면 전역객체로 사용됨 // 브라우저 환경 : window, Node.js : global
+*/
+
+let boy = {
+  name: "Mike",
+  showName: function () {
+    console.log(boy.name);
+  },
+};
+
+let man = boy; // 오브젝트를 새로만든 것이 아닌 접근을 늘린 것
+boy.showName(); //Mike
+man.showName();
+man.name = "Tom";
+boy.showName(); //Tom
+man.showName();
+
+console.log(boy.name);
+
+// method
+
+let boy1 = {
+  name: "Mike",
+  sayThis: function () {
+    console.log(this);
+  },
+};
+
+boy1.sayThis();
