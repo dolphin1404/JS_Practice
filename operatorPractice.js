@@ -41,4 +41,17 @@ a 가 null도 아니고 undefined도 아니면 a
 그 외의 경우는 b
 */
 
-x = a !== null && a !== undefined ? a : b;
+// x = a !== null && a !== undefined ? a : b;
+
+/* '??'와 '||'의 차이
+||는 첫 번째 truthy 값을 반환
+??는 첫 번째 정의된 값을 반환
+>>> null, undefined, 숫자 0을 구분 지워 다뤄야할 때 중요
+*/
+let height = 0;
+
+console.log(height || 100); // 100  0을 falsy 한 값으로 취급하기에 null과 undefined로 할당한 것과 동일취급
+console.log(height ?? 100); // 0  변수가 앞에서 정의되었기 때문. height가 정확하게 null이나 undefined 일 겨웅에만 100이 된다. 이런 특징 때문에 높이처럼 0이 할당될 수 있는 변수를 사용해 기능을 개발할 때 사용하자
+
+// 연산자 우선순위 
+// ??의 연산자 우선순위는 5로 꽤 낮다.

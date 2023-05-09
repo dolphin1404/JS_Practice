@@ -44,14 +44,29 @@ let sum = (a, b ) => {
 }
 
 let ask = (question, yes, no) => {
-  if(confirm(question)) yes()
+  if (question == 1) yes();
   else no();
-}
+};
 
 ask(
-  "동의하십니까?",
-  () => alert("동의하셨습니다"),
-  () => alert("취소 버튼을 누르혔습니다.")
+  "1",
+  () => console.log("동의하셨습니다"),
+  () => console.log("취소 버튼을 누르혔습니다.")
 );
 
 console.log("-------------------------");
+
+let showError = () => {
+  console.log("error");
+};
+
+showError();
+
+const sayBye = (name) => {
+  const msg = `Hello, ${name}`;
+  console.log(msg);
+};
+
+sayBye("kyu");
+
+const plus = (num1, num2) => num1 + num2;
