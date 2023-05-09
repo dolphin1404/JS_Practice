@@ -12,7 +12,7 @@
   }
 
 
-  화살표 함수 (arrow function) : 함수 표현식보다 단순하고 간결하게
+  화살표 함수 (arrow function) : 함수 표현식보다 단순하고 간결하게.
 */
 let add = (num1, num2) => {
   return num1 + num2;
