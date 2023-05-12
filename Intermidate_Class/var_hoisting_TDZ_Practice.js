@@ -58,4 +58,5 @@ function hello() {
   for (let i = 0; i < 12; i++) {}
   console.log(i);
 }
+
 hello(); //ReferenceError: i is not defined
